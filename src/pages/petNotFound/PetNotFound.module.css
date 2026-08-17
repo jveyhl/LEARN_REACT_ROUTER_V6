@@ -1,0 +1,24 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.image {
+    width: 100%;
+    max-width: 500px;
+}
+
+.actionsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.page h3 {
+    margin-bottom: 1rem;
+}

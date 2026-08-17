@@ -1,0 +1,17 @@
+<svg width="250" height="40" viewBox="0 0 250 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .logo-text {
+      font-family: "Brush Script MT", "Segoe Script", cursive;
+      font-size: 40px;
+      font-weight: 700;
+      fill: #7B2CBF;
+    }
+  </style>
+
+  <text
+    x="2"
+    y="28"
+    class="logo-text"
+    letter-spacing="0.3"
+  >Adopt-A-Pet!</text>
+</svg>

@@ -1,0 +1,98 @@
+html,
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 18px 60px;
+}
+
+.nav-links {
+  display: flex;
+  background-color: #56009b;
+  color: white;
+  list-style: none;
+  justify-content: space-around;
+  margin: 0;
+  padding: 12px 180px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  border-radius: 18px;
+  padding: 6px 24px;
+  font-size: 18px;
+}
+
+.nav-link-active {
+  background-color: #320059;
+}
+
+.search-row {
+  display: flex;
+}
+
+.search {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search:focus {
+  border-color: #56009b;
+  box-shadow: 0 0 0 3px rgba(86, 0, 155, 0.2);
+}
+
+.search.searchErrorInput:focus {
+  border-color: red;
+  outline: none;
+}
+
+.searchErrorInput {
+  border-color: red;
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.2);
+}
+
+.searchError {
+  color: red;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px 8px;
+  justify-items: center;
+  width: 100%;
+  padding: 32px;
+}
+
+
+
+/*ADDED THIS MYSELF MAY NEED TO FIX...*/
+.button {
+  background: #56009b;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
