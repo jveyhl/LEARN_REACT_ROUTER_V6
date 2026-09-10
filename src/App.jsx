@@ -20,6 +20,9 @@ const router = createBrowserRouter(
       <Route path="pet-details-not-found" element={<PetNotFound />} />
     </Route>,
   ),
+  {
+    basename: import.meta.env.BASE_URL,
+  },
 );
 
 export default function App() {
