@@ -27,7 +27,8 @@ const SearchPage = () => {
 
   return (
     <div className="page">
-      <Hero image="/pets-hero.png" />
+      {/*updated image source after github pages deployment presented image load bug*/}
+      <Hero image={`${import.meta.env.BASE_URL}pets-hero.png`} />
       <h3>{pets.length} pets found</h3>
       <div className="grid">
         {pets.map((pet) => (

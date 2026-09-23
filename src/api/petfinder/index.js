@@ -1,5 +1,6 @@
-const animalsApi = "/animals";
-const typesApi = "/types";
+// updated after github pages deployment presented image load bug
+const animalsApi = `${import.meta.env.BASE_URL}animals`;
+const typesApi = `${import.meta.env.BASE_URL}types`;
 
 export const getPets = async (type = "", query = "") => {
   const searchParams = new URLSearchParams({ type, query });

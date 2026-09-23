@@ -1,6 +1,20 @@
 import { Link } from "react-router-dom";
 import styles from "./Pet.module.css";
 
+// added after github pages deployment presented image load bug
+import CatImage from "../../assets/images/Cat.jpeg";
+import DogImage from "../../assets/images/Dog.jpeg";
+import BirdImage from "../../assets/images/Bird.jpeg";
+import LizardImage from "../../assets/images/Lizard.jpeg";
+
+// added after github pages deployment presented image load bug
+const localImages = {
+  "Cat.jpeg": CatImage,
+  "Dog.jpeg": DogImage,
+  "Bird.jpeg": BirdImage,
+  "Scales, Fins & Other.jpeg": LizardImage,
+};
+
 export default function Pet({ animal }) {
   return (
     <Link
@@ -8,9 +22,10 @@ export default function Pet({ animal }) {
       to={`/${animal.type.toLowerCase()}/${animal.id}`}
     >
       <div className={styles.petImageContainer}>
+        {/*updated src after github pages deployment presented image load bug*/}
         <img
           className={styles.petImage}
-          src={animal.photos?.[0]?.medium || "/missing-animal.png"}
+          src={localImages[animal.localImage] || "/missing-animal.png"}
           alt={animal.name}
           onError={(e) => (e.currentTarget.src = "/missing-animal.png")}
         />

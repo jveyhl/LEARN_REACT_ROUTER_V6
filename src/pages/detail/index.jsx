@@ -3,6 +3,20 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { getPetDetails } from "../../api/petfinder";
 import styles from "./DetailPage.module.css";
 
+// added after github pages deployment presented image load bug
+import CatImage from "../../assets/images/Cat.jpeg";
+import DogImage from "../../assets/images/Dog.jpeg";
+import BirdImage from "../../assets/images/Bird.jpeg";
+import LizardImage from "../../assets/images/Lizard.jpeg";
+
+// added after github pages deployment presented image load bug
+const localImages = {
+  "Cat.jpeg": CatImage,
+  "Dog.jpeg": DogImage,
+  "Bird.jpeg": BirdImage,
+  "Lizard.jpeg": LizardImage,
+};
+
 const DetailPage = () => {
   const [petData, setPetData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -17,7 +31,8 @@ const DetailPage = () => {
         setLoading(true);
         const data = await getPetDetails(id);
         setPetData(data);
-        setImageSrc(data.photos?.[0]?.full || "/missing-animal.png");
+        // updated after github pages deployment presented image load bug
+        setImageSrc(localImages[data.localImage] || "/missing-animal.png");
         setError(false);
       } catch (error) {
         setError(true);

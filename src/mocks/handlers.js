@@ -2,12 +2,14 @@ import { rest } from "msw";
 import animals from "./data/animals.json";
 import details from "./data/details.json";
 import types from "./data/types.json";
+// updated after github pages deployment presented image load bug
+const baseUrl = import.meta.env.BASE_URL;
 
 export const handlers = [
-  rest.get("/types", (_req, res, ctx) => {
+  rest.get(`${baseUrl}types`, (_req, res, ctx) => {
     return res(ctx.status(200), ctx.json(types));
   }),
-  rest.get("/animals", (req, res, ctx) => {
+  rest.get(`${baseUrl}animals`, (req, res, ctx) => {
     const type = req.url.searchParams.get("type");
     const query = req.url.searchParams.get("query");
 
@@ -30,7 +32,7 @@ export const handlers = [
     }
     return res(ctx.status(200), ctx.json(response));
   }),
-  rest.get("/animals/:id", (req, res, ctx) => {
+  rest.get(`${baseUrl}animals/:id`, (req, res, ctx) => {
     const { id } = req.params;
     const response = details[id];
 

@@ -26,7 +26,11 @@ const HomePage = () => {
 
   return (
     <div className="page">
-      <Hero image="/pets-hero.png" displayText={type} />
+      {/*updated image source after github pages deployment presented image load bug*/}
+      <Hero
+        image={`${import.meta.env.BASE_URL}pets-hero.png`}
+        displayText={type}
+      />
       <h3>
         <span className="pet-type-label">{type ? `${type}s` : "Pets"}</span>{" "}
         available for adoption near you
